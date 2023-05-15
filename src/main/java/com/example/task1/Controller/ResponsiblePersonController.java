@@ -40,7 +40,7 @@ public class ResponsiblePersonController {
     }
 
     @PostMapping
-    public ResponseEntity addMeet(@RequestBody ResponsiblePerson responsiblePerson) {
+    public ResponseEntity addPerson(@RequestBody ResponsiblePerson responsiblePerson) {
         try {
             if (responsiblePersonRepository.findByName(responsiblePerson.getName()) != null) {
                 return ResponseEntity.badRequest().body("Users with the same name already exists");
@@ -53,7 +53,7 @@ public class ResponsiblePersonController {
     }
 
     @DeleteMapping("/item/{id}")
-    public ResponseEntity deleteMeet(@PathVariable Long id) {
+    public ResponseEntity deletePerson(@PathVariable Long id) {
         try {
             if (true) {
                 responsiblePersonService.delete(id);
